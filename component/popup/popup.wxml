@@ -1,0 +1,61 @@
+<!--component/popup.wxml-->
+<view class="wx-popup" catchtouchmove='true' hidden="{{flag}}" bindtap="hidePopup"></view>
+<view hidden="{{flag}}">
+  <view class='popup-container' animation="{{animationData}}">
+    <view class="wx-popup-title">{{title}}\t
+      <i class="iconfont icon-wenhao iconJuli" bindtap='_openTips' />
+    </view>
+
+    <view class="divLine"></view>
+
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" style="height: 9em;color:{{color}}" placeholder="{{textTips}}" value='{{userInput}}' bindinput='bindWordLimit' />
+          <view class="weui-textarea-counter">{{sum}}/140</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="divLine"></view>
+
+    <view class="wx-popup-btn">
+      <text class="btn-no" bindtap='_error'>{{btn_no}}</text>
+      <text class="btn-ok" bindtap='_successClick'>{{btn_ok}}</text>
+    </view>
+  </view>
+
+  <mp-halfScreenDialog show="{{typeT}}" closabled="{{true}}">
+  <view slot="title">{{titleTips}}</view>
+  <view slot="desc">
+    <view class="weui-grid__label" wx:if="{{showT}}">
+      <text>1、点击按钮/空白格子将记忆填入六宫格内\n</text>
+      <text>2、每天只可记录一条\n</text>
+      <text>3、删除记忆不可恢复\n</text>
+      <text>4、记忆超过6天自动删除\n</text>
+    </view>
+
+    <view class="weui-grid__label" wx:if="{{showF}}">
+      <text>1、点击按钮/空白格子可修改记忆\n</text>
+      <text>2、修改记忆次数无限制\n</text>
+      <text>3、超过六天的记忆自动删除，不可修改\n</text>
+    </view>
+
+    <view class="weui-grid__label" wx:if="{{showW}}">
+      <text>1、开启“人间观察”授权后，可选择记忆进行‘伪装’\n</text>
+      <text>2、伪装记忆用于展示在“人间观察”页面，可被其它用户看到\n</text>
+      <text>3、若不填写伪装，则原记忆会被看到\n</text>
+    </view>
+
+    <view class="weui-grid__label" wx:if="{{showZ}}">
+      <text>1、点击按钮/空白格子可修改伪装\n</text>
+      <text>2、修改伪装次数无限制\n</text>
+      <text>3、超过六天的伪装自动随记忆一起删除，不可修改\n</text>
+      <text>4、删除记忆的同时伪装也会被删除，不给予提醒\n</text>
+    </view>
+  </view>
+  <view slot="footer">
+    <button class="mini-btn" type="default" bindtap="_explainT">智商够用了吗</button>
+  </view>
+</mp-halfScreenDialog>
+</view> 

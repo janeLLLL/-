@@ -1,0 +1,22 @@
+<!--component/whatever.wxml-->
+<view class="wx-popup" hidden="{{flag1}}" catchtouchmove='true' bindtap="hidePopup1"></view>
+<view hidden="{{flag1}}">
+  <view class='popup-container' animation="{{animationData}}">
+    <view class="wx-popup-title">{{title1}}</view>
+    <view class="divLine"></view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <text>如果你同意授权此功能，即同意『负』《用户协议》和《隐私策略》。\n</text>
+          <text>你将可以随机看到其他已授权用户记录的记忆；\n</text>
+          <text>同时，授权之后他人也将随机阅览到你发布的记忆。\n</text>
+        </view>
+      </view>
+    </view>
+    <view class="divLine"></view>
+    <view class="wx-popup-btn">
+      <text class="btn-no" bindtap='_error1'>{{btn_no}}</text>
+      <text class="btn-ok" bindtap='_success1'>{{btn_ok}}</text>
+    </view>
+  </view>
+</view>

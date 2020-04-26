@@ -1,0 +1,102 @@
+.wx-popup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 110%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.popup-container {
+  position: absolute;
+  left: 10%;
+  top: 30%;
+  width: 80%;
+  max-width: 600rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 10rpx;
+  box-sizing: bordre-box;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background: #fff;
+}
+
+.wx-popup-title {
+  width: 100%;
+  padding: 30rpx;
+  margin-left: 220rpx;
+  font-size: 30rpx;
+}
+
+.wx-popup-con {
+  margin: 60rpx 10rpx;
+  text-align: center;
+}
+
+.wx-popup-btn {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20rpx;
+  margin-top: 25rpx;
+}
+
+.wx-popup-btn text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 55rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 88rpx;
+  font-size: 30rpx;
+}
+
+.weui-cell__bd {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+}
+
+.weui-cell {
+  padding: 16px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.weui-cells_after-title {
+  margin-top: 0;
+}
+
+.weui-cells {
+  position: relative;
+  margin-top: 8px;
+  background-color: #fff;
+  line-height: 1.41176471;
+  font-size: 30rpx;
+}
+
+.weui-toptips_info {
+  background-color: #10aeff;
+}
+
+weui-textarea-counter {
+  color: rgba(0, 0, 0, 0.3);
+  text-align: right;
+}
+
+.weui-textarea {
+  display: block;
+  width: 99%;
+}
+
+.divLine {
+  background: #e0e3da;
+  width: 100%;
+  height: 5rpx;
+}

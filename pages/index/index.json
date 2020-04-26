@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "popup": "/component/popup/popup",
+    "whatever": "/component/whatever/whatever",
+    "mp-halfScreenDialog": "/component/half-screen-dialog/half-screen-dialog",
+    "mp-slideview": "/component/slideview/slideview",
+    "mp-cells": "/component/cells/cells",
+    "mp-cell": "/component/cell/cell",
+    "isDelete":"/component/isDelete/isDelete"
+  }
+}

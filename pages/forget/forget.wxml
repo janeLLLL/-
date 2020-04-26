@@ -1,0 +1,57 @@
+<view class="body">
+  <view class="page__bd">
+
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <view class="shang">
+      <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+        <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+            <view>实时搜索文本</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class="xia">
+    <view class="wrapper" hidden="{{tagState}}" bindtouchmove="handletouchmove" bindtouchstart="handletouchstart">
+      <view wx:for="{{tagEle}}" wx:key="{{key}}" wx:index="{{index}}" id="tag{{index}}" style="opacity:{{item.opacity}};top: {{item.top}};left: {{item.left}}; z-index: {{item.zIndex}};font-size: {{item.fontSize}}" bindtap="textInfoTap" data-text='{{item.title}}'>{{item.title}}</view>
+    </view>
+  </view>
+  <view class="forgetText">
+    <text>\n这里是你每一次存储的记忆\n</text>
+    <text>点击可以查看你那天写了点什么\n</text>
+    <text>也可以考虑删除它，但若记录已过了6天则永久不可恢复\n删除切记三思\n\n</text>
+  </view>
+
+  <view class="weui-media-box " display="{{flag2}}">
+    <view class="weui-media-box__title weui-media-box__title_in-text">{{forgetDate}}</view>
+    <view class="weui-media-box__desc">{{forgetText}}</view>
+    <view class="container">
+      <view class="button-sp-area">
+        <button wx:if="{{forgetText}}" class="mini-btn" type="warn" size="mini" bindtap="deleteText">删除</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="weui-footer">
+  <view class="weui-footer__links">
+    <view class="weui-footer__text">『负』保留所有权利</view>
+  </view>
+  <view class="weui-footer__text">Copyright © 2008-2019 weui.io</view>
+</view>

@@ -1,0 +1,208 @@
+/* component/popup.wxss */
+
+.wx-popup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.popup-container {
+  position: absolute;
+  left: 10%;
+  top: 30%;
+  width: 80%;
+  max-width: 600rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 10rpx;
+  box-sizing: bordre-box;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background: #fff;
+}
+
+.wx-popup-title {
+  width: 100%;
+  padding: 30rpx;
+  margin-left: 210rpx;
+  font-size: 30rpx;
+}
+
+.wx-popup-con {
+  margin: 60rpx 10rpx;
+  text-align: center;
+}
+
+.wx-popup-btn {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20rpx;
+  margin-top: 25rpx;
+}
+
+.wx-popup-btn text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 55rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 88rpx;
+  font-size: 30rpx;
+}
+
+.weui-cell__bd {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.weui-cell {
+  padding: 16px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.weui-cells_after-title {
+  margin-top: 0;
+}
+
+.weui-cells {
+  position: relative;
+  margin-top: 8px;
+  background-color: #fff;
+  line-height: 1.41176471;
+  font-size: 30rpx;
+}
+
+.weui-toptips_info {
+  background-color: #10aeff;
+}
+
+weui-textarea-counter {
+  color: rgba(0, 0, 0, 0.3);
+  text-align: right;
+}
+
+.weui-textarea {
+  display: block;
+  width: 99%;
+}
+
+.divLine {
+  background: #e0e3da;
+  width: 100%;
+  height: 5rpx;
+}
+
+/*在线图标*/
+@font-face {
+  font-family: 'iconfont';  /* project id 1501307 */
+  src: url('//at.alicdn.com/t/font_1501307_j6wqmwwiu9a.eot');
+  src: url('//at.alicdn.com/t/font_1501307_j6wqmwwiu9a.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1501307_j6wqmwwiu9a.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1501307_j6wqmwwiu9a.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1501307_j6wqmwwiu9a.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1501307_j6wqmwwiu9a.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shoucang:before {
+  content: "\e60f";
+}
+
+.icon-yincang:before {
+  content: "\e677";
+}
+
+.icon-you-copy:before {
+  content: "\e634";
+}
+
+.icon-bianji1:before {
+  content: "\e710";
+}
+
+.icon-yincang1:before {
+  content: "\e6d5";
+}
+
+.icon-add1:before {
+  content: "\e600";
+}
+
+.icon-double-left:before {
+  content: "\e601";
+}
+
+.icon-huigu:before {
+  content: "\e612";
+}
+
+.icon-shoucang1:before {
+  content: "\e613";
+}
+
+.icon-zuo1:before {
+  content: "\e680";
+}
+
+.icon-before:before {
+  content: "\e662";
+}
+
+.icon-biaoji:before {
+  content: "\e728";
+}
+
+.icon-kanguo:before {
+  content: "\e664";
+}
+
+.icon-you1:before {
+  content: "\e63d";
+}
+
+.icon-you2:before {
+  content: "\e63e";
+}
+
+.icon-wenhao:before {
+  content: "\e60b";
+}
+
+.icon-shanchu:before {
+  content: "\e635";
+}
+/*在线图标end*/
+
+.weui-grid__label {
+  position: relative;
+  display: flex;
+  padding: 15rpx 20rpx;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: grey;
+  font-size: 28rpx;
+  overflow: hidden; /** 隐藏超出的内容 **/
+  word-break: break-all;
+  text-overflow: ellipsis; /** 多行 **/
+  display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  line-height: 2em;
+}

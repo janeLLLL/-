@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="userinfo">
+    <block>
+      <image bindtap="" class="userinfo-avatar" src="{{avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{nickName}}</text>
+    </block>
+  </view>
+</view>
+
+<view class="container">
+  <view class="button-sp-area">
+    <button class="mini-btn" type="default" size="mini" bindtap="onLoad">换一位</button>
+  </view>
+</view>
+
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-grids">
+      <block wx:for="{{grids}}" wx:key="*this">
+        <view url="" class="weui-grid" hover-class="weui-grid_active">
+          <scroll-view scroll-y="true" style="height:320rpx" scroll-top="{{scrollTop}}">
+            <view class="weui-grid__label">
+              <text wx:if="{{ne[ne.length-index-1].hiddenText}}">{{ne[ne.length-index-1].hiddenText}}</text>
+              <text wx:else>{{ne[ne.length-index-1].area}}</text>
+            </view>
+          </scroll-view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<view class="weui-footer">
+  <view class="weui-footer__links">
+    <view class="weui-footer__text">『负』保留所有权利</view>
+  </view>
+  <view class="weui-footer__text">Copyright © 2008-2019 weui.io</view>
+</view>

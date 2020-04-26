@@ -1,0 +1,88 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="changeImg" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
+
+<view class="container">
+  <view class="button-sp-area">
+    <button class="mini-btn btn1" type="default" size="mini" bindtap="showPopup">填入</button>
+    <button class="mini-btn btn1" type="default" size="mini" bindtap="redirectsTap">回顾</button>
+    <button class="mini-btn btn1" type="default" size="mini" bindtap="showPopup1">观察</button>
+  </view>
+</view>
+
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-grids">
+      <block wx:for="{{grids}}" wx:key="*this">
+        <view class="weui-grid" hover-class="weui-grid_active">
+          <scroll-view scroll-y="true" style="height: 305rpx;" scroll-top="{{scrollTop}}">
+            <swiper class="swiperH" style="height:750rpx" current="{{currentIndex}}" bindchange="bindchange">
+              <!-- item数组当前项 -->
+              <swiper-item class="swiper-item" bindtap="actionSheetTap" data-text='{{ne[ne.length-index-1].area}}' data-id="{{currentIndex}}">
+                <view class="weui-grid__label">
+                  {{ne[ne.length-index-1].area}}
+                </view>
+              </swiper-item>
+              <!--隐藏后的内容-->
+              <swiper-item wx:if="{{look}}" class="swiper-item" bindtap="actionSheetTap1" data-text='{{ne[ne.length-index-1].hiddenText}}' data-id="{{currentIndex}}">
+                <view class="weui-grid__label">
+                  {{ne[ne.length-index-1].hiddenText}}
+                </view>
+              </swiper-item>
+            </swiper>
+          </scroll-view>
+          <view class="iconS" wx:if="{{!currentIndex}}">
+            <i class="iconfont icon-yincang1 iconJuli" wx:if="{{ne[ne.length-index-1].area && look &&!ne[ne.length-index-1].hiddenText}}" catchtap='hiddenThis' hover-stop-propagation='true' data-text='{{ne[ne.length-index-1].area}}' />
+            <i class="iconfont icon-bianji1 iconJuli" wx:if="{{ne[ne.length-index-1].area}}" catchtap='upDataText' hover-stop-propagation='true' data-text='{{ne[ne.length-index-1].area}}' />
+            <i class="iconfont icon-shanchu iconJuli" wx:if="{{ne[ne.length-index-1].area}}" catchtap='isDelete2' hover-stop-propagation='true' data-text='{{ne[ne.length-index-1].area}}' />
+            <i class="iconfont icon-zuo12 iconJuli" wx:if="{{ne[ne.length-index-1].hiddenText && look}}" catchtap='changeDot1' hover-stop-propagation='true' />
+          </view>
+          <view class="iconL" wx:else>
+            <i class="iconfont icon-zuo11 iconJuli" wx:if="{{ne[ne.length-index-1].hiddenText}}" catchtap='changeDot2' hover-stop-propagation='true' />
+            <i class="iconfont icon-shanchu iconJuli" wx:if="{{ne[ne.length-index-1].hiddenText}}" catchtap='isDelete1' hover-stop-propagation='true' data-text='{{ne[ne.length-index-1].hiddenText}}' />
+            <i class="iconfont icon-bianji1 iconJuli" wx:if="{{ne[ne.length-index-1].hiddenText}}" catchtap='upDataText1' hover-stop-propagation='true' data-text='{{ne[ne.length-index-1].hiddenText}}' />
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<popup id='popup' btn_no='取消' btn_ok='提交' bind:error="_error" bind:success="_success">
+</popup>
+
+<whatever id='whatever' title1='人间观察' btn_no='取消' btn_ok='授权' bind:error="_error1" bind:success="_success1">
+</whatever>
+
+<isDelete id='isDelete' title2='提醒你' btn_no='取消' btn_ok='确定' bind:error="_error2" bind:success="_success2">
+</isDelete>
+
+<mp-halfScreenDialog show="{{typeT}}" closabled="{{false}}">
+  <view slot="title">使用须知</view>
+  <view slot="desc">
+    <view class="weui-grid__label" hidden="{{showT}}">
+      <text>这是一个帮助你“自洽”的软件\n</text>
+      <text>根据『艾宾浩斯记忆遗忘曲线』：\n“在六天中人类记忆会逐渐消散”\n</text>
+      <text>但总有那些令你痛苦、羞愧、难堪的事情你无法忘记\n</text>
+      <text>你无法面对自己和这些事情，但程序可以做到抹去它\n</text>
+    </view>
+    <view slot="footer">
+      <button class="mini-btn" type="default" bindtap="explainT" wx:if="{{!showT}}">关闭说明</button>
+    </view>
+  </view>
+</mp-halfScreenDialog>
+
+
+<view class="weui-footer">
+  <view class="weui-footer__links">
+    <view class="weui-footer__text">『负』保留所有权利</view>
+  </view>
+  <view class="weui-footer__text">Copyright © 2008-2019 weui.io</view>
+</view>
